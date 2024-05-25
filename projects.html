@@ -15,6 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Projects</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
         .nav-link {
             color: rgb(235, 235, 235);
             font-size: larger;
@@ -47,8 +53,8 @@
             color: rgb(255, 255, 255);
             font-size: 24px;
             width: 100%;
-            margin-top: 30px;
             font-family: 'Noto Sans', 'Roboto', Calibri;
+            margin-top: auto;
         }
         .onyx .navbar,
         .onyx .footer {
@@ -114,7 +120,7 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%); 
-            width: 750px;
+            width: 800px;
             background: rgba(0, 0, 0, 0.5);
             color: #fff;
             padding: 10px;
@@ -147,6 +153,10 @@
             .owl-carousel .item .caption {
                 font-size: 14px;
             }
+        }
+
+        main {
+            flex-grow: 1;
         }
     </style>
 </head>
@@ -191,23 +201,28 @@
         </div>
     </nav>
 
-    <h2 class="fade-in" style="text-align: center; margin-top: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">My Projects</h2>
-    <div class="carousel-container">
-        <div class="owl-carousel owl-theme" id="carousel1">
-            <div class="item">
-                <a href="https://cruise-chatbot.onrender.com/cruise" target="_blank">
-                    <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_1v4lkl1v4lkl1v4l.jpg" alt="Cruise Chatbot">
-                </a>
-                <p style="font-size: larger; font-weight: 750; font-family: 'Noto Sans', 'Roboto', Calibri;">Cruise - Chatbot</p>
-            </div>
-            <div class="item">
-                <a href="https://ml-proficiency.onrender.com/mlq" target="_blank">
-                    <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_8tfs9q8tfs9q8tfs.jpg" alt="Machine Learning Proficiency Predictor">
-                </a>
-                <p style="font-size: larger; font-weight: 750; font-family: 'Noto Sans', 'Roboto', Calibri;">Machine Learning Proficiency Predictor</p>
+    <h2 class="fade-in" style="text-align: center; margin-top: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Projects</h2><br><br>
+    <main>
+        <div class="carousel-container">
+            <div class="owl-carousel owl-theme" id="carousel1">
+                <div class="item">
+                    <a href="https://cruise-chatbot.onrender.com/cruise" target="_blank">
+                        <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_1v4lkl1v4lkl1v4l.jpg">
+                    </a>
+                    <p style = "font-size: larger; font-weight:500; font-family: 'Noto Sans', 'Roboto', Calibri;"> Cruise - Chatbot </p>
+                </div>
+                <div class="item">
+                    <a href="https://ml-proficiency.onrender.com/mlq" target="_blank">
+                        <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_8tfs9q8tfs9q8tfs.jpg">
+                    </a>
+                    <p style="font-size: larger; font-weight:500; font-family: 'Noto Sans', 'Roboto', Calibri;"> Machine Learning proficiency predictor </p>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
+    <footer class="footer">
+        <p>COPYRIGHTS &copy;2024</p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
@@ -254,6 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
         var themes = ['onyx', 'ebony', 'twilight', 'midnight', 'shadow'];
         var currentThemeIndex = -1;
         function toggleTheme() {
@@ -263,7 +279,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     </script>
 </body>
-<footer class="footer">
-    <p>COPYRIGHTS &copy;2024</p>
-</footer>
 </html>
+
