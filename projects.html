@@ -85,36 +85,6 @@
         .theme-toggler:hover {
             color: white;
         }
-@media (max-width: 768px) {
-
-    .theme-toggler {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .owl-carousel .item img {
-        display: block;
-        margin: 0 auto; 
-        width: 100%; 
-        height: auto; 
-     
-    }
-
-    .owl-carousel .item .caption {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%); 
-        width: 100%; 
-        background: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-        font-size: 16px;
-        display: none; 
-        animation: fadeInCaption 1s forwards;
-    }
-}
 
         .carousel-container {
             align-items: center;
@@ -135,8 +105,8 @@
         .owl-carousel .item img {
             display: block;
             margin: 0 auto; 
-            width: 750px;
-            height: 500px;
+            width: 800px; 
+            height: 600px;
         }
 
         .owl-carousel .item .caption {
@@ -159,8 +129,26 @@
             100% { opacity: 1; display: block; }
         }
 
+        @media (max-width: 768px) {
+            .theme-toggler {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
 
-</style>
+            .carousel-container {
+                max-width: 100%;
+            }
+
+            .owl-carousel .item img {
+                width: 100%; 
+                height: auto; 
+            }
+
+            .owl-carousel .item .caption {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
@@ -203,20 +191,20 @@
         </div>
     </nav>
 
-    <h2 class="fade-in" style="text-align: center; margin-top: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Projects</h2><br><br>
+    <h2 class="fade-in" style="text-align: center; margin-top: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">My Projects</h2>
     <div class="carousel-container">
         <div class="owl-carousel owl-theme" id="carousel1">
             <div class="item">
                 <a href="https://cruise-chatbot.onrender.com/cruise" target="_blank">
-                    <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_1v4lkl1v4lkl1v4l.jpg">
+                    <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_1v4lkl1v4lkl1v4l.jpg" alt="Cruise Chatbot">
                 </a>
-                <p style = "font-size: larger; font-weight:500; font-family: 'Noto Sans', 'Roboto', Calibri;"> Cruise - Chatbot </p>
+                <p style="font-size: larger; font-weight: 750; font-family: 'Noto Sans', 'Roboto', Calibri;">Cruise - Chatbot</p>
             </div>
             <div class="item">
                 <a href="https://ml-proficiency.onrender.com/mlq" target="_blank">
-                    <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_8tfs9q8tfs9q8tfs.jpg">
+                    <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_8tfs9q8tfs9q8tfs.jpg" alt="Machine Learning Proficiency Predictor">
                 </a>
-                <p style="font-size: larger; font-weight:500; font-family: 'Noto Sans', 'Roboto', Calibri;"> Machine Learning proficiency predictor </p>
+                <p style="font-size: larger; font-weight: 750; font-family: 'Noto Sans', 'Roboto', Calibri;">Machine Learning Proficiency Predictor</p>
             </div>
         </div>
     </div>
@@ -266,7 +254,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
         var themes = ['onyx', 'ebony', 'twilight', 'midnight', 'shadow'];
         var currentThemeIndex = -1;
         function toggleTheme() {
@@ -276,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     </script>
 </body>
-    <footer class="footer">
-        <p>COPYRIGHTS &copy;2024</p>
-    </footer>
+<footer class="footer">
+    <p>COPYRIGHTS &copy;2024</p>
+</footer>
 </html>
