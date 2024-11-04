@@ -11,155 +11,248 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Projects</title>
     <style>
+        :root {
+            --primary-color: #283c86;
+            --secondary-color: #45a247;
+            --text-color: #363642;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --transition-speed: 0.3s;
+            --navbar-height: 75px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         html, body {
             height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
+            overflow-x: hidden;
         }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .page-wrapper {
+            min-height: 100%;
+            padding-top: var(--navbar-height);
+            padding-bottom: var(--footer-height);
+            position: relative;
+            z-index: 1;
+        }
+
         .nav-link {
-            color: rgb(235, 235, 235);
-            font-size: larger;
-            transition: color 0.5s;
-            font-family: 'Noto Sans', 'Roboto', Calibri;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all var(--transition-speed);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin: 0 0.3rem;
         }
+
         .nav-link:hover {
-            color: white;
+            color: #ffffff;
+            transform: translateY(-2px);
+            background-color: rgba(255, 255, 255, 0.1);
         }
+
         .navbar {
-            background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgb(84, 68, 173) 100%);
-        }
-        .navbar-nav {
-            display: flex;
-            align-items: left; 
-        }
-        .navbar-nav.me-auto {
-            margin-right: auto; 
-        }
-        .navbar-nav.ms-auto {
-            margin-left: auto; 
-        }
-        .navbar-nav .nav-item {
-            margin-right: 10px; 
-        }
-        .footer {
-            background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgb(84, 68, 173) 100%);
-            padding: 5px 0px 5px 0px;
-            text-align: center;
-            color: rgb(255, 255, 255);
-            font-size: 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
             width: 100%;
-            font-family: 'Noto Sans', 'Roboto', Calibri;
-            margin-top: auto;
+            z-index: 1000;
+            height: var(--navbar-height);
         }
-        .onyx .navbar,
-        .onyx .footer {
-            background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-        }
-        .ebony .navbar,
-        .ebony .footer {
-            background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-        }
-        .twilight .navbar,
-        .twilight .footer {
-            background: linear-gradient(90deg,  rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
-        }
-        .midnight .navbar,
-        .midnight .footer{
-            background: linear-gradient(90deg, rgb(191, 138, 224) 0%, rgba(148,187,233,1) 100%);
-        }
-        .shadow .navbar,
-        .shadow .footer {
-            background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgb(84, 68, 173) 100%);
-        }
-        .fade-in {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .fade-in.loaded {
-            opacity: 1;
-        }
+
         .theme-toggler {
-            color: rgb(235, 235, 235);
-            margin-top: 10px;
-            margin-right: 10px;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            padding: 0.5rem;
+            border-radius: 50%;
         }
+
         .theme-toggler:hover {
             color: white;
-        }
-
-        .carousel-container {
-            align-items: center;
-            margin: 20px auto;
-            max-width: 80%;
-        }
-
-        .owl-carousel .item {
-            position: relative;
-            text-align: center; 
-        }
-
-        .owl-carousel .item a {
-            display: inline-block; 
-            text-decoration: none;
-        }
-
-        .owl-carousel .item img {
-            display: block;
-            margin: 0 auto; 
-            width: 800px; 
-            height: 600px;
-        }
-
-        .owl-carousel .item .caption {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%); 
-            width: 800px;
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            font-size: 16px;
-            display: none; 
-            animation: fadeInCaption 1s forwards;
-        }
-
-        @keyframes fadeInCaption {
-            0% { opacity: 0; }
-            100% { opacity: 1; display: block; }
-        }
-
-        @media (max-width: 768px) {
-            .theme-toggler {
-                margin-top: 5px;
-                margin-bottom: 5px;
-            }
-
-            .carousel-container {
-                max-width: 100%;
-            }
-
-            .owl-carousel .item img {
-                width: 100%; 
-                height: auto; 
-            }
-
-            .owl-carousel .item .caption {
-                font-size: 14px;
-            }
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: rotate(180deg);
         }
 
         main {
-            flex-grow: 1;
+            padding: 2rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 1.5rem 0;
+            color: white;
+            font-size: 1.5rem;
+            position: absolute;
+            bottom: 150;
+            width: 100%;
+            height: 150px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.5rem;
+            transition: all var(--transition-speed);
+        }
+
+        .social-icons a:hover {
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .carousel-container {  
+            width: 80%;  
+            margin: 0 auto;  
+            max-width: 800px;  
+            position: relative;  
+            z-index: 1;  
+        }  
+
+        .owl-carousel {  
+            position: relative;  
+            z-index: 1;  
+        }  
+
+        .owl-carousel .item {  
+            position: relative;  
+            background-color: var(--background-color);  
+            border-radius: 8px;  
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+            overflow: hidden;  
+        }  
+
+        .owl-carousel .item img {  
+            width: 100%;  
+            height: auto;  
+            max-height: 600px;  
+            object-fit: cover;  
+            transition: transform 0.3s ease-in-out;  
+        }  
+ 
+        .owl-carousel .item:hover img {  
+            transform: scale(1.05);  
+        }  
+ 
+        .owl-carousel .item p {  
+            text-align: center;  
+            margin-top: 1rem;  
+            font-size: larger;  
+            font-weight: 500;  
+            font-family: 'Noto Sans', 'Roboto', Calibri;  
+            background-color: var(--background-color);  
+            padding: 0.5rem;  
+        }  
+
+        /* Carousel Navigation Buttons */  
+        .owl-carousel .owl-nav {  
+            position: absolute;  
+            top: 50%;  
+            left: 0;  
+            right: 0;  
+            transform: translateY(-50%);  
+            display: flex;  
+            justify-content: space-between;  
+            padding: 0 1rem;  
+        }  
+
+        .owl-carousel .owl-nav button.owl-prev,  
+        .owl-carousel .owl-nav button.owl-next {  
+            font-size: 2rem;  
+            color: #333;  
+            background-color: rgba(255, 255, 255, 0.7);  
+            border-radius: 50%;  
+            width: 40px;  
+            height: 40px;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            transition: background-color 0.3s ease-in-out;  
+        }  
+
+        .owl-carousel .owl-nav button.owl-prev:hover,  
+        .owl-carousel .owl-nav button.owl-next:hover {  
+            background-color: rgba(255, 255, 255, 0.9);  
+        }  
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .onyx {
+            --primary-color: #4B1248;
+            --secondary-color: #f1a738;
+        }
+
+        .ebony {
+            --primary-color: #aa4b4b;
+            --secondary-color: #3b997b;
+        }
+
+        .twilight {
+            --primary-color: #0B486B;
+            --secondary-color: #F56217;
+        }
+
+        .midnight {
+            --primary-color: #2C5364;
+            --secondary-color: #c06c84;
+        }
+
+        .shadow {
+            --primary-color: #283c86;
+            --secondary-color: #45a247;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .carousel-container {
+                width: 95%;
+            }
+
+            .theme-toggler {
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -174,21 +267,21 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <div class="theme-toggler">
-                            <i class="fas fa-adjust fa-1x" id="theme-toggler-icon" onclick="toggleTheme()"></i>
+                            <i class="fas fa-adjust" id="theme-toggler-icon" onclick="toggleTheme()"></i>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mailto:vishnu290504@gmail.com" target="_blank">
+                        <a class="nav-link" href="mailto:vishnu290504@gmail.com">
                             <i class="far fa-envelope"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.linkedin.com/in/vishnu-kannabiran-5b87a824b/" target="_blank">
+                        <a class="nav-link" href="https://www.linkedin.com/in/vishnu-kannabiran-5b87a824b/">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/Vishnu2954" target="_blank">
+                        <a class="nav-link" href="https://github.com/Vishnu2954">
                             <i class="fab fa-github"></i>
                         </a>
                     </li>
@@ -197,89 +290,103 @@
         </div>
     </nav>
 
-    <h2 class="fade-in" style="text-align: center; margin-top: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Projects</h2><br><br>
-    <main>
-        <div class="carousel-container">
-            <div class="owl-carousel owl-theme" id="carousel1">
-                <div class="item">
-                    <a href="https://cruise-chatbot.onrender.com/cruise" target="_blank">
-                        <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_1v4lkl1v4lkl1v4l.jpg">
-                    </a>
-                    <p style = "font-size: larger; font-weight:500; font-family: 'Noto Sans', 'Roboto', Calibri;"> Cruise - Chatbot </p>
-                </div>
-                <div class="item">
-                    <a href="https://tealeaf-disease.onrender.com/form" target="_blank">
-                        <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_h2k3d2h2k3d2h2k3.jpeg">
-                    </a>
-                    <p style="font-size: larger; font-weight:500; font-family: 'Noto Sans', 'Roboto', Calibri;"> Tea Leaf Disease predictor </p>
-                </div>
-                 <div class="item">
-                    <a href="https://fashionista-mern.vercel.app" target="_blank">
-                        <img src="https://vishnu2954.github.io/Portfolio/images/fashionista_logo.png">
-                    </a>
-                    <p style="font-size: larger; font-weight:500; font-family: 'Noto Sans', 'Roboto', Calibri;"> Fashionista - Clothing Website </p>
+    <div class="page-wrapper">
+        <main>
+            <h2 class="fade-in text-center mb-4">Projects</h2>
+            <div class="carousel-container">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <a href="https://cruise-chatbot.onrender.com/cruise" target="_blank">
+                            <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_1v4lkl1v4lkl1v4l.jpg" alt="Cruise Chatbot">
+                        </a>
+                        <p style="font-weight: bold;">Cruise - Chatbot</p>
+                        <p>An interactive and user-friendly chatbot integrated with a disease prediction model built using Natural Language Processing & Support Vector Machine, which helps in predicting 24 different diseases based on symptoms with 97.08% accuracy.</p>
+                    </div>
+                    <div class="item">
+                        <a href="https://tealeaf-disease.onrender.com/form" target="_blank">
+                            <img src="https://vishnu2954.github.io/Portfolio/images/Gemini_Generated_Image_h2k3d2h2k3d2h2k3.jpeg" alt="Tea Leaf Disease Predictor">
+                        </a>
+                        <p style="font-weight: bold;">Tea Leaf Disease Classifier</p>
+                        <p>A Lightweight SVM model using EfficientNetV2 as backbone to classify leaves affected by either of seven distinct diseases with enhanced accuracy of 93.08%, showing a 0.61% improvement over <a href="https://www.sciencedirect.com/science/article/pii/S2405844024024964">Qidong Heng's model</a> while significantly reducing computational complexity.</p>
+                    </div>
+                    <div class="item">
+                        <a href="https://fashionista-mern.vercel.app" target="_blank">
+                            <img src="https://vishnu2954.github.io/Portfolio/images/fashionista_logo.png" alt="Fashionista">
+                        </a>
+                        <p style="font-weight: bold;">Fashionista</p>
+                        <p>A sleek clothing website developed using the MERN stack, featuring user authentication, product management, dynamic shopping cart integrated with customer feedback showcasing UI/UX design skills and cross-device compatibility.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
+
     <footer class="footer">
-        <p>COPYRIGHTS &copy;2024</p>
+        <div class="container">
+            <div class="text-center">
+                <div class="social-icons">
+                    <a href="mailto:vishnu290504@gmail.com"><i class="far fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/vishnu-kannabiran-5b87a824b/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Vishnu2954"><i class="fab fa-github"></i></a>
+                </div>
+                <p class="mb-0">COPYRIGHTS © 2024</p>
+            </div>
+        </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('loaded');
-            }
-        });
-    });
+        document.addEventListener('DOMContentLoaded', function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    }
+                }
+            });
 
-    document.querySelectorAll('.fade-in').forEach(section => {
-        observer.observe(section);
-    });
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
             });
         });
-    });
 
-    function showCaption(event) {
-        var caption = $(event.target).find('.owl-item.active .caption');
-        caption.css('display', 'none').delay(500).queue(function (next) {
-            $(this).css('display', 'block');
-            next();
-        });
-    }
+        const themes = ['onyx', 'ebony', 'twilight', 'midnight', 'shadow'];
+        let currentThemeIndex = -1;
 
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        items: 1,
-        onInitialized: showCaption,
-        onTranslated: showCaption
-    });
-});
-
-
-        var themes = ['onyx', 'ebony', 'twilight', 'midnight', 'shadow'];
-        var currentThemeIndex = -1;
         function toggleTheme() {
             currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-            var theme = themes[currentThemeIndex];
-            document.body.className = theme;
+            document.body.className = themes[currentThemeIndex];
+            
+            const themeToggler = document.getElementById('theme-toggler-icon');
+            themeToggler.style.transform = `rotate(${360 * (currentThemeIndex + 1)}deg)`;
         }
     </script>
 </body>
 </html>
-
