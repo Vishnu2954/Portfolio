@@ -3,158 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <title>Portfolio</title>
 <style>
-    .nav-link {
-    color: rgb(235, 235, 235);
-    font-size: larger;
-    transition: color 0.5s;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.nav-link:hover {
-    color: white;
-}
-
-.theme-toggler {
-color: rgb(235, 235, 235);
-margin-top: 10px;
-margin-right: 10px;
-}
-
-.theme-toggler:hover {
-    color: white;
-}
-
- .navbar {
-    background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgb(84, 68, 173) 100%); 
-}
-.navbar-nav {
-    display: flex;
-    align-items: left; 
-}
-
-.navbar-nav.me-auto {
-    margin-right: auto; 
-}
-
-.navbar-nav.ms-auto {
-    margin-left: auto; 
-}
-
-.navbar-nav .nav-item {
-    margin-right: 10px; 
-}
-.footer {
-    background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgb(84, 68, 173) 100%);
-    padding: 5px 0px 5px 0px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-size: 24px;
-    width: 100%;
-    margin-top: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.onyx .navbar,
-.onyx .footer {
-    background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-}
-
-.ebony .navbar,
-.ebony .footer {
-    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-}
-
-.twilight .navbar,
-.twilight .footer {
-    background: linear-gradient(90deg,  rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
-}
-
-.midnight .navbar,
-.midnight .footer{
-    background: linear-gradient(90deg, rgb(234, 160, 192,1) 0%, rgba(148,187,233,1) 100%);
-}
-
-.shadow .navbar,
-.shadow .footer {
-    background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgb(84, 68, 173) 100%);
-}
-.about {
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.resume-container {
-    width: 100%;
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-@media (max-width: 768px) {
-.resume-container {
-width: 100%; 
-max-width: 100%;
+    :root {
+        --primary-color: #283c86;
+        --secondary-color: #45a247;
+        --text-color: #363642;
+        --background-color: #f8f9fa;
+        --card-background: #ffffff;
+        --transition-speed: 0.3s;
     }
-.theme-toggler {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
- }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text-color);
+        background-color: var(--background-color);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
 
-.resume-content {
-    line-height: 1.5;
-    font-family: 'Times New Roman', Times, serif;
-}
+    .nav-link {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all var(--transition-speed);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        margin: 0 0.3rem;
+    }
 
-.resume-content strong {
-    font-weight: bold;
-    color: rgb(100, 100, 100);
-}
+    .nav-link:hover {
+        color: #ffffff;
+        transform: translateY(-2px);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
 
-.resume-content ul {
-    list-style-type: none;
-    padding: 0;
-}
+    .navbar {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
 
-.resume-content li {
-    margin-bottom: 10px;
-}
+    .theme-toggler {
+        color: rgba(255, 255, 255, 0.9);
+        cursor: pointer;
+        transition: all var(--transition-speed);
+        padding: 0.5rem;
+        border-radius: 50%;
+    }
 
-.resume-content a {
-    color: #3073a3;
-    text-decoration: none;
-    font-weight: bold;
-}
+    .theme-toggler:hover {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: rotate(180deg);
+    }
 
-.resume-content a:hover {
-    text-decoration: underline;
-}
+    .welcome-section {
+        background: linear-gradient(135deg, rgba(52,152,219,0.1), rgba(84,68,173,0.1));
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+        border-radius: 0 0 50% 50% / 4%;
+    }
 
-.resume-content hr {
-    color: rgb(100, 100, 100);
-}
+    .welcome-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+    }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
-}
+    .about-section {
+        background-color: var(--card-background);
+        border-radius: 15px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin-bottom: 3rem;
+    }
 
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+    .welcome-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+        border-right: 3px solid;
+        width: max-content;
+        margin: 0 auto 2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 3.5s steps(30, end), 
+                   blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: var(--primary-color); }
+    }
+
+    .download-resume-btn {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        width: 300px;
+    }
+
+    .download-resume-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        color: white;
+    }
+
+    .download-resume-btn i {
+        margin-right: 0.5rem;
+    }
+
+    .resume-container {
+        background-color: var(--card-background);
+        border-radius: 15px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin: 2rem auto;
+    }
+
+    .resume-content strong {
+        color: var(--primary-color);
+    }
+
+    .resume-content a {
+        color: var(--secondary-color);
+        transition: all var(--transition-speed);
+    }
+
+    .resume-content a:hover {
+        color: var(--primary-color);
+        text-decoration: none;
+        transform: translateX(5px);
+    }
+
+    .section-title {
+        position: relative;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+        font-weight: 600;
+        color: var(--secondary-color);
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        border-radius: 3px;
+    }
+
+    .resume-container .section-title {
+        text-align: center;
+    }
+
+    .resume-container .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .skill-tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.3rem;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        transition: all var(--transition-speed);
+    }
+
+    .skill-tag:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card {
+        background-color: var(--card-background);
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        transition: all var(--transition-speed);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .footer {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        padding: 1.5rem 0;
+        color: white;
+        font-size: 1.5rem;
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+        height: 180px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .social-icons a {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.5rem;
+        transition: all var(--transition-speed);
+    }
+
+    .social-icons a:hover {
+        color: white;
+        transform: translateY(-3px);
+    }
+
+
+    .onyx {
+        --primary-color: #4B1248;
+        --secondary-color: #f1a738;
+    }
+
+    .ebony {
+        --primary-color: #aa4b4b;
+        --secondary-color: #3b997b;
+    }
+
+    .twilight {
+        --primary-color: #0B486B;
+        --secondary-color: #F56217;
+    }
+
+    .midnight {
+        --primary-color: #2C5364;
+        --secondary-color: #c06c84;
+    }
+
+    .shadow {
+        --primary-color: #283c86;
+        --secondary-color: #45a247;
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 1rem;
+        }
+
+        .welcome-section {
+            padding: 2rem 0;
+        }
+
+        .resume-container {
+            padding: 1.5rem;
+        }
+
+        .skill-tag {
+            font-size: 0.8rem;
+        }
+    }
 </style>
 </head>
 <body>
-     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -167,22 +318,23 @@ max-width: 100%;
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <div class="theme-toggler">
-                        <i class="fas fa-adjust fa-1x" id="theme-toggler-icon" onclick="toggleTheme()"></i>
-                </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mailto: vishnu290504@gmail.com" target="_blank">
+                        <div class="theme-toggler">
+                            <i class="fas fa-adjust" id="theme-toggler-icon" onclick="toggleTheme()"></i>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:vishnu290504@gmail.com">
                             <i class="far fa-envelope"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.linkedin.com/in/vishnu-kannabiran-5b87a824b/" target="_blank">
+                        <a class="nav-link" href="https://www.linkedin.com/in/vishnu-kannabiran-5b87a824b/">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/Vishnu2954" target="_blank">
+                        <a class="nav-link" href="https://github.com/Vishnu2954">
                             <i class="fab fa-github"></i>
                         </a>
                     </li>
@@ -191,134 +343,263 @@ max-width: 100%;
         </div>
     </nav>
 
-    <h2 class="fade-in" style="text-align: center; margin-top: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Welcome to my Portfolio!!!</h2>
+    <section class="welcome-section fade-in">
+        <div class="container text-center">
+            <h1 class="welcome-title" id="typing-text"></h1>
+        </div><br>
 
-    <div class="container fade-in" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
-        <section>
-            <div class="about" style="margin-top: 70px;">
-                <h4 style="text-align: center;">I'm Vishnu K </h4>
-            <p1 style="text-align: center;">Student at Vellore Institute of Technology Vellore, Tamil Nadu, India.</p1> <br></br>  <br></br>  
-            <h4 style="text-align: center;">About me</h4> 
-            <p2>
+    <div class="container">
+        <section class="about-section fade-in">
+            <h2 class="section-title">I'm Vishnu K</h2>
+            <p class="lead mb-4">Student at Vellore Institute of Technology Vellore, Tamil Nadu, India.</p>
+            <h3 class="section-title">About me</h3>
+            <p class="about-text">
                 A passionate and aspiring student pursuing Computer Science with specialization in Data Science. 
                 I possess a strong foundation in various programming languages and equipped with strong analytical and problem-solving skills, enabling me to approach challenges with a logical and systematic mindset. 
                 With a keen interest in extracting insights from data, I am eager to expand my knowledge and stay up-to-date with the latest advancements in the field as well as apply my skills in real-world challenges and make a meaningful impact.
                 In addition, I am equipped with strong interpersonal skills that facilitate teamwork and collaboration. 
                 I enjoy taking on challenges and thriving in collaborative environments that fosters growth.
-            </p2><br></br> <br></br> 
+            </p>
+        </section>
+
+        <div class="row justify-content-center">
+        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:7b55aa04-f071-4f6b-8899-b026d52b1768" download class="download-resume-btn">
+            <i class="fas fa-download"></i> Download Resume
+        </a>
+        </div>
+
+        <section class="resume-section fade-in">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="resume-container">
+                        <h2 class="section-title">Resume</h2><br>
+                        <div class="resume-content">
+                            <div class="text-center mb-4">
+                                <h3 class="section-title">Vishnu Kannabiran</h3>
+                                <p class="contact-info">
+                                    <strong>+919360355804</strong> | 
+                                    <a href="mailto:vishnu290504@gmail.com">vishnu290504@gmail.com</a> | 
+                                    <a href="https://www.linkedin.com/in/vishnu-kannabiran-5b87a824b">LinkedIn</a> | 
+                                    <a href="https://github.com/Vishnu2954">GitHub</a>
+                                </p>
+                            </div>
+                            <br>
+                            <div class="education-section mb-4">
+                                <h4 class="section-title">Education</h4>
+                                <div class="education-item mb-3">
+                                    <h5><strong>Vellore Institute of Technology, Vellore</strong></h5>
+                                    <ul class="list-unstyled ps-3">
+                                        <li><strong>Programme:</strong> Bachelor of Technology</li>
+                                        <li><strong>Majors:</strong> Computer Science with specialization in Data Science</li>
+                                        <li><strong>CGPA:</strong> 8.53*</li>
+                                    </ul>
+                                </div>
+                                <div class="education-item">
+                                    <h5><strong>Shrishti Vidhyashram Sr Sec School, Vellore</strong></h5>
+                                    <ul class="list-unstyled ps-3">
+                                        <li><strong>12th Board Percentage:</strong> 85.2%</li>
+                                        <li><strong>10th Board Percentage:</strong> 95.8%</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="skills-section mb-4">
+                                <h4 class="section-title">Skills</h4>
+                                <div class="skills-grid">
+                                    <div class="skill-category mb-3">
+                                        <strong>Programming Languages:</strong>
+                                        <div class="skill-tags">
+                                            <span class="skill-tag">Python</span>
+                                            <span class="skill-tag">Java</span>
+                                        </div>
+                                    </div>
+                                    <div class="skill-category mb-3">
+                                        <strong>Data Science:</strong>
+                                        <div class="skill-tags">
+                                            <span class="skill-tag">Machine Learning</span>
+                                            <span class="skill-tag">Deep Learning</span>
+                                            <span class="skill-tag">Natural Language Processing</span>
+                                        </div>
+                                    </div>
+                                    <div class="skill-category mb-3">
+                                        <strong>Data Analytics:</strong>
+                                        <div class="skill-tags">
+                                            <span class="skill-tag">MS Excel</span>
+                                            <span class="skill-tag">NumPy</span>
+                                            <span class="skill-tag">Pandas</span>
+                                            <span class="skill-tag">Matplotlib</span>
+                                            <span class="skill-tag">Seaborn</span>
+                                        </div>
+                                    </div>
+                                    <div class="skill-category mb-3">
+                                        <strong>Web Development:</strong>
+                                        <div class="skill-tags">
+                                            <span class="skill-tag">HTML</span>
+                                            <span class="skill-tag">CSS</span>
+                                            <span class="skill-tag">PHP</span>
+                                            <span class="skill-tag">JavaScript</span>
+                                            <span class="skill-tag">Fast API</span>
+                                            <span class="skill-tag">Express.JS</span>
+                                            <span class="skill-tag">React.JS</span>
+                                            <span class="skill-tag">Node.JS</span>
+                                        </div>
+                                    </div>
+                                    <div class="skill-category mb-3">
+                                        <strong>Soft Skills:</strong>
+                                        <div class="skill-tags">
+                                            <span class="skill-tag">Teamwork</span>
+                                            <span class="skill-tag">Leadership</span>
+                                            <span class="skill-tag">Critical Thinking</span>
+                                            <span class="skill-tag">Problem Solving</span>
+                                            <span class="skill-tag">Time Management</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="experience-section mb-4">
+                                <h4 class="section-title">Experience</h4>
+                                <div class="experience-item mb-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5><strong>Full Stack Developer Intern - Ethnus</strong></h5>
+                                        <span class="text-muted">Jun 24 – Jul 24</span>
+                                    </div>
+                                    <p class="location text-muted mb-2">Remote</p>
+                                    <a href="#" class="certificate-link mb-2 d-inline-block">Certificate</a>
+                                    <p class="experience-description">Led a cross-functional team to develop an E-Commerce clothing platform, contributing primarily to backend development using the MERN stack, featuring user authentication, product management, dynamic shopping cart and customer feedback.</p>
+                                </div>
+
+                                <div class="experience-item mb-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5><strong>Web Developer Intern - Codebind Technologies</strong></h5>
+                                        <span class="text-muted">Nov 23 – Dec 23</span>
+                                    </div>
+                                    <p class="location text-muted mb-2">Chennai</p>
+                                    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:c997a362-8e95-4453-8968-ce7880811af5" class="certificate-link mb-2 d-inline-block">Certificate</a>
+                                    <p class="experience-description">Collaborated within a cross-functional team to develop an E-Learning platform, focusing on frontend development using HTML, CSS, Bootstrap and JavaScript to enhance user experience with responsive, user-friendly interfaces ensuring cross-site compatibility.</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="projects-section mb-4">
+                                <h4 class="section-title">Projects</h4>
+                                <div class="project-card">
+                                    <h5><a href="https://cruise-chatbot.onrender.com/cruise">Disease Predicting Chatbot</a></h5>
+                                    <p>An interactive and user-friendly chatbot integrated with a disease prediction model built using Natural Language Processing & Support Vector Machine, which helps in predicting 24 different diseases based on symptoms with 97.08% accuracy.</p>
+                                </div>
+                                <div class="project-card">
+                                    <h5><a href="https://tealeaf-disease.onrender.com/form">Tea Leaf Disease Classifier</a></h5>
+                                    <p>A Lightweight SVM model using EfficientNetV2 as backbone to classify leaves affected by either of seven distinct diseases with enhanced accuracy of 93.08%, showing a 0.61% improvement over Qidong Heng's model while significantly reducing computational complexity.</p>
+                                </div>
+                                <div class="project-card">
+                                    <h5><a href="https://fashionista-mern.vercel.app/">Fashionista</a></h5>
+                                    <p>A sleek clothing website developed using the MERN stack, featuring user authentication, product management, dynamic shopping cart integrated with customer feedback showcasing UI/UX design skills and cross-device compatibility.</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="certifications-section">
+                                <h4 class="section-title">Certifications</h4>
+                                <div class="certification-item mb-2">
+                                    <strong>Azure AI Fundamentals: </strong>
+                                    <span class="text-muted">(ID: wbynS-H9uQ)</span>
+                                    <a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=455&cvid=3UutkFDiZlRkRS216JQWcA==" class="ms-2">Credential</a>
+                                </div>
+                                <div class="certification-item">
+                                    <strong>AWS Academy Graduate: </strong>
+                                    <a href="https://www.credly.com/badges/2aa7fef0-d39e-49be-a90b-19856a59f106/print">Credential</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-   <div class="container fade-in">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h4 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Resume</h4>
-                <div class="resume-container">
-                    <div class="resume-content" style="text-align: left;">
-                        <p style="font-size: 24px; text-align: center;"><strong>Vishnu Kannabiran</strong></p>
-                        <p style="text-align: center;"><strong>+919360355804 </strong>| <a href="mailto: vishnu290504@gmail.com">vishnu290504@gmail.com</a> | <a href="https://www.linkedin.com/in/vishnu-kannabiran-5b87a824b" target="_blank">LinkedIn</a> | <a href="https://github.com/Vishnu2954" target="_blank">GitHub</a></p>
-                        <hr>
-                        <p style="text-decoration: underline; font-size: large;"><strong>Education</strong></p>
-                        <ul>
-                            <li><strong>Vellore Institute of Technology, Vellore:</strong></li>
-                            <ul style="padding-left: 25px;">
-                                <li><strong>Programme:</strong> Bachelor of Technology</li>
-                                <li><strong>Course:</strong> Computer Science with specialization in Data Science</li>
-                                <li><strong>CGPA:</strong> 8.53* </li>
-                            </ul>
-                             <li><strong>Shrishti Vidhyashram Sr Sec School, Vellore:</strong></li>
-                            <ul style="padding-left: 25px;">
-                                <li><strong>12th Board Percentage:</strong> 85.2%</li>
-                                <li><strong>10th Board Percentage:</strong> 95.8%</li>
-                            </ul>  
-                        </ul>
-                        <hr>
-                        <p style="text-decoration: underline;  font-size: large;"><strong>Skills</strong></p>
-                        <ul style="padding-left: 25px;">
-                            <li><strong>Programming Languages:</strong> Python, Java</li>
-                            <li><strong>Data Science:</strong> Machine Learning, Deep Learning, Natural Language Processing </li>
-                            <li><strong>Data Analytics:</strong>  MS Excel, NumPy, Pandas, Matplotlib, Seaborn </li>
-                            <li><strong>Databases:</strong> MySQL, MongoDB </li>
-                            <li><strong>Web Development:</strong> HTML, CSS, PHP, JavaScript, Fast API, Express.JS, React.JS, Node.JS </li>
-                            <li><strong>Soft Skills:</strong> Teamwork, Leadership, Critical Thinking, Problem Solving, Time Management
-                        </ul>
-                        <hr>
-                        <p style="text-decoration: underline;  font-size: large;"><strong>Experience</strong></p>
-                         <p><strong>Full Stack Developer Intern - Ethnus, Remote (Jun 24 – Jul 24):</strong></p>
-                        <a href="#" target="_blank">Certificate</a>
-                        <ul>
-                            <li style="padding-left: 25px;">
-                                <p>Led a cross-functional team to develop an E-Commerce clothing platform, contributing primarily to backend development using the MERN stack, featuring user authentication, product management, dynamic shopping cart and customer feedback.</p></li>
-                        </ul>
-                        <p><strong>Web Developer Intern- Codebind Technologies, Chennai (Nov 23 – Dec 23):</strong></p>
-                        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:c997a362-8e95-4453-8968-ce7880811af5" target="_blank">Certificate</a>
-                        <ul>
-                            <li style="padding-left: 25px;">
-                                <p>Collaborated within a cross-functional team to develop an E-Learning platform, focusing on frontend development using HTML, CSS, Bootstrap and JavaScript to enhance user experience with responsive, user-friendly interfaces ensuring cross-site compatibility.</p></li>
-                        </ul>
-                        <hr>
-                        <p style="text-decoration: underline;  font-size: large;"><strong>Projects</strong></p>
-                        <ul>
-                            <li style="padding-left: 25px;"><strong><a href="https://cruise-chatbot.onrender.com/cruise">Disease Predicting Chatbot</a></strong></li>
-                            <p style="padding-left: 50px;">An interactive and user-friendly chatbot integrated with a disease prediction model built using Natural Language Processing & Support Vector Machine, which helps in predicting 24 different diseases based on symptoms with 97.08% accuracy.</p>
-                            <li style="padding-left: 25px;"><strong><a href="https://tealeaf-disease.onrender.com/form">Tea Leaf Disease Classifier</a></strong></li>
-                            <p style="padding-left: 50px;">A Lightweight SVM model using EfficientNetV2 as backbone to classify leaves affected by either of seven distinct diseases with enhanced accuracy of 93.08%, showing a 0.61% improvement over Qidong Heng’s model while significantly reducing computational complexity.</p>
-                            <li style="padding-left: 25px;"><strong><a href="https://fashionista-mern.vercel.app/">Fashionista</a></strong></li>
-                            <p style="padding-left: 50px;">A sleek clothing website developed using the MERN stack, featuring user authentication, product management, dynamic shopping cart integrated with customer feedback showcasing UI/UX design skills and cross-device compatibility.</p>
-                        </ul>
-                         <hr>
-                         <p style="text-decoration: underline;  font-size: large;"><strong>Certifications</strong></p>
-                        <ul>
-                               <li><strong>Azure AI Fundamentals: </strong> (ID: wbynS-H9uQ) <a href = "https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=455&cvid=3UutkFDiZlRkRS216JQWcA=="  target="_blank">Credential</li>
-                               <li><strong>AWS Academy Graduate: </strong><a href = "https://www.credly.com/badges/2aa7fef0-d39e-49be-a90b-19856a59f106/print"  target="_blank">Credential</li>
-                        </ul>
-                    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <div class="social-icons d-flex justify-content-center mb-3">
+                    <a href="mailto:vishnu290504@gmail.com"><i class="far fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/vishnu-kannabiran-5b87a824b/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Vishnu2954"><i class="fab fa-github"></i></a>
                 </div>
+                <p class="mb-0">COPYRIGHTS © 2024</p>
             </div>
         </div>
-    </div>
-    <script>
-        function adjustResumeContainerWidth() {
-    var resumeContainer = document.querySelector('.resume-container');
-    if (window.innerWidth <= 768) {
-        resumeContainer.style.width = '100%';
-    } 
-}
-adjustResumeContainerWidth();
-document.addEventListener('DOMContentLoaded', function() {
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
-        }
-    });
-});
-
-document.querySelectorAll('.fade-in').forEach(section => {
-    observer.observe(section);
-});
-});
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-    });
-});
-});
-var themes = ['onyx', 'ebony', 'twilight', 'midnight', 'shadow'];
-var currentThemeIndex = -1;
-function toggleTheme() {
-    currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-    var theme = themes[currentThemeIndex];
-    document.body.className = theme;
-}
-    </script>
-    </body>
-    <footer class="footer">
-        <p>COPYRIGHTS&copy2024</p>
     </footer>
+
+    <script>
+
+        const text = "Welcome to my Portfolio!";
+        const typingText = document.getElementById('typing-text');
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                typingText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100); 
+            }
+        }
+
+
+        window.onload = function() {
+            typeWriter();
+            adjustLayout();
+        };
+
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
+        const themes = ['onyx', 'ebony', 'twilight', 'midnight', 'shadow'];
+        let currentThemeIndex = -1;
+
+        function toggleTheme() {
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            document.body.className = themes[currentThemeIndex];
+
+            const themeToggler = document.getElementById('theme-toggler-icon');
+            themeToggler.style.transform = `rotate(${360 * (currentThemeIndex + 1)}deg)`;
+        }
+
+        function adjustLayout() {
+            if (window.innerWidth <= 768) {
+                document.querySelectorAll('.skill-tag').forEach(tag => {
+                    tag.style.fontSize = '0.8rem';
+                });
+            } else {
+                document.querySelectorAll('.skill-tag').forEach(tag => {
+                    tag.style.fontSize = '0.9rem';
+                });
+            }
+        }
+
+        window.addEventListener('resize', adjustLayout);
+        adjustLayout();
+    </script>
+</body>
 </html>
